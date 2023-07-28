@@ -13,8 +13,8 @@ buildah bud -t popgen_suite
 To make the container publicly available, it is pushed to [dockerhub](https://hub.docker.com/r/khench/genotyping_suite) using [skopeo](https://github.com/containers/skopeo) and [podman](https://podman.io/):
 
 ```sh
-skopeo login -u khench docker.io
-podman push localhost/popgen_suite docker.io/khench/popgen_suite:v0.1
+skopeo login -u khench docker.io/
+podman push localhost/popgen_suite docker.io/khench/popgen_suite:v0.2
 ```
 
 ## Accessing the container
@@ -22,5 +22,5 @@ podman push localhost/popgen_suite docker.io/khench/popgen_suite:v0.1
 The bundled software can be accessed directly from [dockerhub](https://hub.docker.com/r/khench/popgen_suite) with `podman` (or `docker`, or `apptainer`/`singularity`):
 
 ```sh
-podman run docker.io/khench/popgen_suite:v0.1 vcftools --version
+podman run docker.io/khench/popgen_suite:v0.2 vcftools --version
 ```
